@@ -5,6 +5,6 @@ describe('blah', () => {
     const json = '{"2":"hearts","1":"soul"}';
     const m = parse(json);
     expect(m.constructor).toEqual(Map);
-    expect([...m.keys()]).toEqual(["2","1"]);
+    expect([...m.keys()]).toEqual(['2','1']);
   });
 });
