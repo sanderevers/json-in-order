@@ -43,9 +43,10 @@ function* processNode(): Generator<any, any, ParseEvent> {
     case 'openobject':
       const obj: Map<string, any> = new Map();
       let key = evt.key;
+      if (!key) yield; // must be 'objectclose'
       while (key) {
         obj.set(key, yield* processNode());
-        key = (yield).key; // onkey or onobjectclose event
+        key = (yield).key; // 'key' or 'objectclose' event
       }
       return obj;
     case 'openarray':
