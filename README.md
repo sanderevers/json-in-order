@@ -16,9 +16,8 @@ console.log([...m].join(' / '));   // 2,hearts / 1,soul
 
 ## Motivation
 
-Since ES2015, JavaScript `object` keys have a well-defined order for iteration. This is _almost_ the order
-
-in which they were inserted, [but not quite](https://stackoverflow.com/a/5525820). In particular, the keys `"2"` and
+Since ES2015, JavaScript `object` keys have a well-defined order for iteration. This is _almost_ the order in which
+they were inserted, [but not quite](https://stackoverflow.com/a/5525820). In particular, the keys `"2"` and
 `"1"` from the above example will be returned in a different order:
 
 ```js
