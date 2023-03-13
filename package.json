@@ -50,7 +50,7 @@
     }
   ],
   "dependencies": {
-    "clarinet": "^0.12.4"
+    "clarinet": "^0.12.5"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.1",
