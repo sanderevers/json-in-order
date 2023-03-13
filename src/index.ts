@@ -63,8 +63,8 @@ function* processNode(): Generator<
     case 'openobject':
       const obj: Map<string, JsonNode> = new Map();
       let key = evt.key;
-      if (!key) yield; // must be 'objectclose'
-      while (key) {
+      if (key===undefined) yield; // must be 'objectclose'
+      while (key!==undefined) {
         obj.set(key, (yield* processNode()) as JsonNode);
         key = (yield).key; // 'key' or 'objectclose' event
       }
