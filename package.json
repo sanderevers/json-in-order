@@ -32,7 +32,6 @@
   },
   "name": "json-in-order",
   "author": "Sander Evers",
-  "module": "dist/json-in-order.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/sanderevers/json-in-order.git"

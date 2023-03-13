@@ -26,13 +26,13 @@ obj["1"]="soul";
 console.log(Object.entries(obj).join(' / '));  // 1,soul / 2,hearts
 ```
 
-So, if you're parsing JSON and are interested in the order in which the keys appear in the input string, you cannot use
-`JSON.parse`, because it will always construct an `object`. In which, by the way, it is totally justified, because
+This means that if you're parsing JSON, and are interested in the order in which the keys appear in the input string, you cannot use
+`JSON.parse` - because it will always construct an `object`. In which, by the way, it is totally justified, because
 [objects have no defined order](https://www.json.org/json-en.html) in the JSON spec.
 
 Still, object keys do have an order in the JSON string, and who is Douglas Crockford to say that you must ignore it?
-Also since ES2015, JavaScript has a standard [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-datatype whose iteration order follows the exact insertion order. Therefore, this package parses JSON objects as a `Map` instead
+ES2015 also introduced a standard [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+datatype whose iteration order does follow the exact insertion order. The package you are looking at parses JSON objects as a `Map` instead
 of an `object`. Use it as you see fit.
 
 ## Credits
