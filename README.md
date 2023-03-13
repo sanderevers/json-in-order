@@ -38,5 +38,3 @@ of an `object`. Use it as you see fit.
 ## Credits
 
 Actual parsing is performed by [clarinet](https://github.com/dscape/clarinet).
-
-Library built using [tsdx](https://tsdx.io).

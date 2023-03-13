@@ -20,7 +20,7 @@ export function parse(input: string): JsonNode {
       const res = gen.next(obj);
       if (res.done) out = res.value as JsonNode;
     } catch (e) {
-      err = e;
+      err = e as Error;
     }
   }
 
