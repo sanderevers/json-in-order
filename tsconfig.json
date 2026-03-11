@@ -32,8 +32,5 @@
     "node_modules",
     "src/browser.ts",
     "**/*.test.ts"
-  ],
-  "references": [
-    { "path": "./tsconfig.browser.json" }
   ]
 }
