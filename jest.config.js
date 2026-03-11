@@ -5,6 +5,6 @@ module.exports = {
         "**/?(*.)+(spec|test).+(ts|tsx)"
     ],
     transform: {
-        "^.+\\.(ts|tsx|js)$": "ts-jest"
+        "^.+\\.(ts|tsx|js)$": ["ts-jest", { tsconfig: "tsconfig.test.json" }]
     },
 }

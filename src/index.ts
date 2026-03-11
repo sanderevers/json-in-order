@@ -1,7 +1,6 @@
-//@ts-ignore
-import clarinet from 'clarinet';
+import * as clarinet from 'clarinet';
 
-type ParseEvent = { type: string; key?: string; value?: any; err?: Error };
+type ParseEvent = { type: string; key?: string; value?: string | number | boolean | null; err?: Error };
 export type JsonNode =
   | string
   | boolean
@@ -28,7 +27,7 @@ export function parse(input: string): JsonNode {
   p.onopenobject = (key: string) => dispatch({ type: 'openobject', key });
   p.onopenarray = () => dispatch({ type: 'openarray' });
   p.onkey = (key: string) => dispatch({ type: 'key', key });
-  p.onvalue = (value: string) => dispatch({ type: 'value', value });
+  p.onvalue = (value: string | number | boolean | null) => dispatch({ type: 'value', value });
   p.oncloseobject = () => dispatch({ type: 'closeobject' });
   p.onclosearray = () => dispatch({ type: 'closearray' });
   p.onerror = (err: Error) => dispatch({ type: 'error', err });
@@ -59,7 +58,7 @@ function* processNode(): Generator<
   const evt: ParseEvent = yield;
   switch (evt.type) {
     case 'value':
-      return evt.value;
+      return evt.value!;
     case 'openobject':
       const obj: Map<string, JsonNode> = new Map();
       let key = evt.key;
