@@ -21,7 +21,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint src/",
     "test": "jest",
     "clean": "rm -rf dist build package",
     "ts-node": "ts-node",
@@ -34,7 +34,6 @@
     "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
     "serve": "esbuild src/browser.ts --bundle --servedir=. --outdir=dist/esbuild"
   },
-  "peerDependencies": {},
   "prettier": {
     "printWidth": 80,
     "semi": true,
@@ -62,6 +61,7 @@
     "ts-node": "^10.9.2",
     "tslib": "^2.8.0",
     "typedoc": "^0.28.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.57.0"
   }
 }

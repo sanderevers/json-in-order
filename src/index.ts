@@ -51,7 +51,7 @@ export function stringify(obj: JsonNode): string {
 const CLOSE_ARRAY = Symbol();
 
 function* processNode(): Generator<
-  any,
+  unknown,
   JsonNode | typeof CLOSE_ARRAY,
   ParseEvent
 > {
