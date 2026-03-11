@@ -1,6 +1,6 @@
 {
   "name": "json-in-order",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "type": "commonjs",
   "sideEffects": false,
@@ -8,9 +8,9 @@
   "typings": "dist/tsc/index.d.ts",
   "exports": {
     ".": {
-      "import":  "./dist/esm/index.js",
+      "import": "./dist/esm/index.js",
       "require": "./dist/tsc/index.js",
-      "types":   "./dist/tsc/index.d.ts"
+      "types": "./dist/tsc/index.d.ts"
     }
   },
   "files": [
