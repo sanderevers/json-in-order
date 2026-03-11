@@ -8,8 +8,9 @@
   "typings": "dist/tsc/index.d.ts",
   "exports": {
     ".": {
+      "import":  "./dist/esm/index.js",
       "require": "./dist/tsc/index.js",
-      "types": "./dist/tsc/index.d.ts"
+      "types":   "./dist/tsc/index.d.ts"
     }
   },
   "files": [
@@ -26,7 +27,8 @@
     "ts-node": "ts-node",
     "docs": "typedoc --entryPoints src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "build-all": "npm run clean && npm run build && npm run esbuild-browser",
+    "build-esm": "tsc -p tsconfig.esm.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
+    "build-all": "npm run clean && npm run build && npm run build-esm && npm run esbuild-browser",
     "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
     "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
     "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
