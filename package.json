@@ -13,6 +13,8 @@
       "types": "./dist/tsc/index.d.ts"
     }
   },
+  "unpkg": "./dist/esbuild/index.js",
+  "jsdelivr": "./dist/esbuild/index.js",
   "files": [
     "dist",
     "src"
@@ -29,10 +31,10 @@
     "build": "tsc -p tsconfig.json",
     "build-esm": "tsc -p tsconfig.esm.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
     "build-all": "npm run clean && npm run build && npm run build-esm && npm run esbuild-browser",
-    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
-    "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
-    "serve": "esbuild src/browser.ts --bundle --servedir=. --outdir=dist/esbuild"
+    "esbuild-browser": "esbuild src/index.ts --bundle --minify --format=iife --global-name=jio --sourcemap=external --outfile=dist/esbuild/index.js",
+    "esbuild-browser:dev": "esbuild src/index.ts --bundle --format=iife --global-name=jio --outfile=dist/esbuild/index.js",
+    "esbuild-browser:watch": "esbuild src/index.ts --bundle --watch --format=iife --global-name=jio --outfile=dist/esbuild/index.js",
+    "serve": "esbuild src/index.ts --bundle --format=iife --global-name=jio --servedir=. --outdir=dist/esbuild"
   },
   "prettier": {
     "printWidth": 80,
