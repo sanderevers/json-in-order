@@ -1,6 +1,6 @@
 {
   "name": "json-in-order",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "type": "commonjs",
   "sideEffects": false,
