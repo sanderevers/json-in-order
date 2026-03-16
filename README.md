@@ -35,6 +35,22 @@ ES2015 also introduced a standard [Map](https://developer.mozilla.org/en-US/docs
 datatype whose iteration order does follow the exact insertion order. The package you are looking at parses JSON objects as a `Map` instead
 of an `object`. Use it as you see fit.
 
+## Usage without build
+
+You can also use this package directly in the browser.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/json-in-order@latest"></script>
+```
+
+This makes it available in the global namespace as `jio`:
+
+```html
+<script>
+    console.log(jio.parse('{"say":"cheese"}').get("say"));
+</script>
+```
+
 ## Credits
 
 Actual parsing is performed by [clarinet](https://github.com/dscape/clarinet).
